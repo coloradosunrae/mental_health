@@ -12,6 +12,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs
