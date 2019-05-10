@@ -8,7 +8,6 @@ body{
 
 .MainContent{
     display: block;
-    /* width: 100%; */
     transition: all 0.3s;
     border: 1px solid rgba(0,0,0,0.05);
     box-shadow: 
@@ -18,8 +17,6 @@ body{
     margin-right: 25px;
     margin-left: 275px;
     top: 30px;
-
-
 }
 
 @media (max-width: 768px) {

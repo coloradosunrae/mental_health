@@ -2,6 +2,8 @@ import React from "react";
 import SideBar from "../SideBar"
 import TimeLine from "../TimeLine"
 import "./Layout.css"
+import Modal from "../Modal/app.js"
+
 
 function Layout() {
   return (
@@ -10,11 +12,11 @@ function Layout() {
 
     <SideBar />
 
-<div className="">
     <div className="MainContent card">
-    <TimeLine />
+    <TimeLine
+    />
     </div>
-    </div>
+
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Questions from "../Questions"
 import Login from '../Login'
 import options from "./options.json"
 import ContinuePage from "../ContinuePage"
+import {Container} from "../ContainerBox"
 import NavTabs from "../../NavTabs"
 import video from "./images/Health.MP4"
 import "./Quiz.css"
@@ -20,8 +21,7 @@ class Quiz extends Component {
     video:false
     
   }
-
-
+  
   handleInputChange = event => {
     const { name, value } = event.target;
     // Updating the input's state
@@ -49,6 +49,11 @@ class Quiz extends Component {
     });
   };
 
+
+  setInitial = event => {
+      this.setState({ intial: false })
+  };
+
   handleStartQuiz = event => {
     this.setState({goToQuiz : false})
     this.setState({displayQuestions : true})
@@ -59,27 +64,35 @@ class Quiz extends Component {
 
 
 
+
     if (this.state.intial){
-      return  <Login 
-      firstName ={this.state.firstName}
-      randomName ={this.state.randomName}
-      lastNmae ={this.state.lastName}
-      phoneNumber={this.state.phoneNumber}
+      return  (
+    <Container>
+      <Login 
+      // firstName ={this.state.firstName}
+      // randomName ={this.state.randomName}
+      // lastNmae ={this.state.lastName}
+      // phoneNumber={this.state.phoneNumber
+      setInitial = {this.setInitial}
       handleFormSubmit = {this.handleFormSubmit}
       handleInputChange= {this.state.handleInputChange}
       class="styleQuiz"
   />
+  </Container>
+  )
      }
 
      if (this.state.goToQuiz){
 
       return (
         <div className="styleQuiz">
-         
+         <Container>
         <ContinuePage 
               goToQuiz = {this.state.goToQuiz}
               handleStartQuiz ={this.handleStartQuiz}
+     
         />
+           </Container>
       </div>
       ); 
       }
@@ -90,6 +103,7 @@ class Quiz extends Component {
       return(   
       
       <div>
+        <Container>
         <div className="alignVideo">
         <video autoPlay muted playsinline className="alignVideo">
         <source src={video} type="video/mp4" />
@@ -100,7 +114,7 @@ class Quiz extends Component {
     
       
       <Questions />
-
+      </Container>
       </div>
 
       )
@@ -127,6 +141,7 @@ class Quiz extends Component {
       return "Hello"
     }
   }
+
 
   // renderVideo = () => {
 

@@ -1,25 +1,35 @@
+
 import React from "react";
-import "./App.css"
-import { BrowserRouter as Router, Route } from "react-router-dom";
-// import NavTabs from "./components/NavTabs";
-import Quiz from './components/GatherInfo/Quiz'
-// import SideBar from "./components/RecordPage/SideBar"
-import Layout from "./components/RecordPage/Layout"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NoMatch from "./pages/NoMatch";
+import Quiz from "./components/GatherInfo/Quiz";
+import RecordPage from "./components/RecordPage/Layout";
+import DetailRecord from "./pages/DetailRecord";
+import Login from './components/Login';
+import Register from './components/Register';
+import Clients from "./pages/Clients";
+import ContinuePage from './components/GatherInfo/ContinuePage';
 
 
 
 function App() {
+
   return (
-    <div>
-      <Router>
-        <div>
-          {/* <NavTabs /> */}
+    <Router>
+      <div>
+        <Switch>
+    
           <Route exact path="/" component={Quiz} />
-          <Route exact path="/recordpage" component={Layout} />
-        </div>
-      </Router>
-  
-    </div>
+          <Route exact path="/statistics" component={ContinuePage} />
+          <Route exact path="/clientside" component ={Clients} />
+          <Route exact path="/clients/:id" component={DetailRecord} />
+          <Route path='/login' component={Login} />
+         <Route path='/register' component={Register} />
+          <Route component={NoMatch} />
+ 
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

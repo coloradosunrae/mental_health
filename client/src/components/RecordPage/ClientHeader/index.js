@@ -1,7 +1,7 @@
 import React from "react";
 import "./ClientHeader.css"
 
-function ClientHeader(props) {
+function ClientInfo(props) {
     return (
         
         <div className="cardBody container card clientHeaderCard">
@@ -18,4 +18,4 @@ function ClientHeader(props) {
     );
 }
 
-export default ClientHeader;
+export default ClientInfo;
