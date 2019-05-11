@@ -1,5 +1,5 @@
 module.exports = {
-    Client: require("./client"),
+    Client: require("./Client"),
     
   };
   
