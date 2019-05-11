@@ -1,20 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./logo.png"
 // import "./style.css"
 
-function NavTabs() {
+function SecondNavTabs() {
   return (
   
       <nav className="navbar sticky navbar-light sticky--top js-header">
  
-        <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
-        </Link>
+     
         <Link
           to="/statistics"
           className={window.location.pathname === "/statistics" ? "nav-link active" : "nav-link"}
         >
           Statistics
+        </Link>
+    
+        <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+         <img src={logo} alt="logo"/>
         </Link>
         <Link
           to="/contact/learn"
@@ -27,4 +30,4 @@ function NavTabs() {
   );
 }
 
-export default NavTabs;
+export default SecondNavTabs;

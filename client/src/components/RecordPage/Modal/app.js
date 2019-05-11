@@ -36,7 +36,7 @@ class ModalLayout extends Component {
       API.updateClient(this.props.id, {
         clinicianMessages : [{clincianMessage : this.state.clinicianMessage, type: this.state.type}]
       })
-         .then(res => this.loadClients())
+        //  .then(res => this.loadClients())
         .catch(err => console.log(err));
   };
   

@@ -12,6 +12,9 @@ export default {
     },
     updateClient: function(id, bodyinfo) {
       return axios.put("/api/clients/" + id, bodyinfo);
+    },
+    updatethisClient: function(id, bodyinfo) {
+      return axios.put("/api/homepage/" + id, bodyinfo);
     }
   
 };

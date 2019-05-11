@@ -8,6 +8,7 @@ import DetailRecord from "./pages/DetailRecord";
 import Login from './components/Login';
 import Register from './components/Register';
 import Clients from "./pages/Clients";
+import EditorsPage from "./pages/editorspage";
 import ContinuePage from './components/GatherInfo/ContinuePage';
 
 
@@ -21,6 +22,8 @@ function App() {
     
           <Route exact path="/" component={Quiz} />
           <Route exact path="/statistics" component={ContinuePage} />
+          <Route exact path="/recordpage" component={RecordPage} />
+          <Route exact path="/editorspage" component={EditorsPage} />
           <Route exact path="/clientside" component ={Clients} />
           <Route exact path="/clients/:id" component={DetailRecord} />
           <Route path='/login' component={Login} />

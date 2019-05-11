@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Login.css"
 import API from "../../../utils/API";
 import InputMask from "react-input-mask";
@@ -29,76 +29,76 @@ const options = [
 ];
 
 
-class Login extends Component {
-  state = {
-    clients: [],
-    firstName: "",
-    lastName: "",
-    phoneNumber: "",
-    password: "",
-    messageInput: "",
-    suicideInput: true
+function Login (props) {
+  // state = {
+  //   clients: [],
+  //   firstName: "",
+  //   lastName: "",
+  //   phoneNumber: "",
+  //   password: "",
+  //   messageInput: "",
+  //   suicideInput: true
     
-  }
+  // }
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.firstName && this.state.lastName) {
-      API.saveClient({
-        firstName: this.state.firstName,
-         lastName: this.state.lastName,
-        phoneNumber: this.state.phoneNumber,
-        messageInput: this.state.messageInput
-      })
-        .then(this.props.setInitial)
-        .catch(err => console.log(err));
-    }
-  };
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   if (this.state.firstName && this.state.lastName) {
+  //     API.saveClient({
+  //       firstName: this.state.firstName,
+  //        lastName: this.state.lastName,
+  //       phoneNumber: this.state.phoneNumber,
+  //       messageInput: this.state.messageInput
+  //     })
+  //       .then(this.props.setInitial)
+  //       .catch(err => console.log(err));
+  //   }
+  // };
 
 
   
-  handleSuicide = () => {
-    if(this.state.suicideInput) {
-      return (
-        <CardBody>
-        <UncontrolledAlert color="danger">
-          {/* <div className="alert-icon">
-            <FontAwesomeIcon icon={faBell} fixedWidth />
-          </div> */}
-          <div className="alert-message">
-            <strong>Please reach out to 1-800-273-8255</strong> for feelings of suicide. This email is not monitored 24/7  
-          </div>
-        </UncontrolledAlert>
-        </CardBody>
-      )
-    } else{
-      return (
-        <CardBody>
-        <UncontrolledAlert color="danger">
-          {/* <div className="alert-icon">
-            <FontAwesomeIcon icon={faBell} fixedWidth />
-          </div> */}
-          <div className="alert-message">
-            <strong>Please reach out to 1-800-273-8255</strong> for feelings of suicide. This email is not monitored 24/7  
-          </div>
-        </UncontrolledAlert>
-        </CardBody>
-      )
-    }
-  }
+  // handleSuicide = () => {
+  //   if(this.state.suicideInput) {
+  //     return (
+  //       <CardBody>
+  //       <UncontrolledAlert color="danger">
+  //         {/* <div className="alert-icon">
+  //           <FontAwesomeIcon icon={faBell} fixedWidth />
+  //         </div> */}
+  //         <div className="alert-message">
+  //           <strong>Please reach out to 1-800-273-8255</strong> for feelings of suicide. This email is not monitored 24/7  
+  //         </div>
+  //       </UncontrolledAlert>
+  //       </CardBody>
+  //     )
+  //   } else{
+  //     return (
+  //       <CardBody>
+  //       <UncontrolledAlert color="danger">
+  //         {/* <div className="alert-icon">
+  //           <FontAwesomeIcon icon={faBell} fixedWidth />
+  //         </div> */}
+  //         <div className="alert-message">
+  //           <strong>Please reach out to 1-800-273-8255</strong> for feelings of suicide. This email is not monitored 24/7  
+  //         </div>
+  //       </UncontrolledAlert>
+  //       </CardBody>
+  //     )
+  //   }
+  // }
  
 
 
 
 
-  render() {
+  // render() {
     
 
     return (
@@ -122,19 +122,19 @@ class Login extends Component {
       
             <div className="col">
                   <input
-                       value={this.state.firstName}
+                       value={props.firstName}
                        name="firstName"
                        type="text"
                        placeholder="First Name"
                        className="form-control mac"
-                       onChange={this.handleInputChange}
+                       onChange={props.handleInputChange}
                   />
               </div>
               <div className="col">
                   <input
-                  value={this.state.lastName}
+                  value={props.lastName}
                   name="lastName"
-                  onChange={this.handleInputChange}
+                  onChange={props.handleInputChange}
                   type="text"
                   placeholder="Last Name"
                   className="form-control mac"
@@ -143,9 +143,9 @@ class Login extends Component {
                </div>
                <FormGroup>
             <InputMask mask="(999) 999-9999"
-             value={this.state.phoneNumber}
+             value={props.phoneNumber}
              name="phoneNumber"
-             onChange={this.handleInputChange}
+             onChange={props.handleInputChange}
              placeholder="Phone Number"
              className="form-control formChange mac"
             >
@@ -155,7 +155,7 @@ class Login extends Component {
             <FormGroup check inline>
            
         <Label check>
-          <Input type="radio" name="radio2" onClick={this.handleSuicide} onChange={() => true} /> Feelings of Suicdality
+          <Input type="radio" name="radio2"  /> Feelings of Suicdality
         </Label>
       </FormGroup>
       <FormGroup check inline>
@@ -171,9 +171,9 @@ class Login extends Component {
         
 
                    <textarea
-                     value={this.state.messageInput}
+                     value={props.messageInput}
                      name="messageInput"
-                     onChange={this.handleInputChange}
+                     onChange={props.handleInputChange}
                      type="text"
                      placeholder="Message"
                      rows="6"
@@ -181,7 +181,7 @@ class Login extends Component {
                   />
                         </FormGroup>
                   
-                   <button className="btn btn-inside btn-boarder" onClick={this.handleFormSubmit}>Send</button>
+                   <button className="btn btn-inside btn-boarder" onClick={() => props.setInitial()}>Continue</button>
                 </form>
 
           </div>
@@ -192,7 +192,7 @@ class Login extends Component {
         </div>
         );
 
-    }
+    // }
 }
 
 export default Login;

@@ -1,33 +1,22 @@
 import React, {Component} from "react";
 import "./SideBar.css"
-import people from "../people.json"
 import ClientHeader from "../ClientHeader"
+import ClientInfo from "../ClientInfo"
 
-class SideBar extends Component {
-
-    state = {
-        people
-    }
-
-    render() {
+function SideBarTest(props) {
+    {console.log(props)}
         return (
             <div>
                 <div className="wrapperSideBar">
+               
                     <nav id="sidebar">
                         <div className="sidebar-header">
                         <div className="sidenav">
-                                {this
-                                    .state
-                                    .people
-                                    .map(person => (<ClientHeader
-                                        id={person.id}
-                                        key={person.id}
-                                        firstname={person.firstname}
-                                        lastname={person.lastname}
-                                        phonenumber={person.phonenumber}
-                                        message={person.message}
-                                        birthdate={person.birthdate}
-                                        age={person.age}/>))}
+                            <h1>{props.firstName} {props.lastName}</h1>
+                            <p>{props.phoneNumber}</p>
+
+                            Address: 142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
                             </div>
                         </div>
 
@@ -37,40 +26,66 @@ class SideBar extends Component {
                                     href="#homeSubmenu"
                                     data-toggle="collapse"
                                     aria-expanded="false"
-                                    className="dropdown-toggle">Home</a>
+                                    className="dropdown-toggle">CONTACTS</a>
                                 <ul className="collapse list-unstyled" id="homeSubmenu">
-                                    <li>
-                                        <a href="/">Home 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Home 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Home 3</a>
-                                    </li>
+                                <br></br>
+                                    Dr. Baula VakinStrap <br/>
+                                    142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
+                                    970-3092786 <br/>
+                                    Doctor <br/>
+
+                                    <br/>
+
+                                    Dr. Baula VakinStrap <br/>
+                                    142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
+                                    970-3092786 <br/>
+                                    Doctor <br/>
+                                    <br/>
+                                    
+                                    Dr. Baula VakinStrap <br/>
+                                    142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
+                                    970-3092786 <br/>
+                                    Doctor <br/>
+                                    <br/>
+
                                 </ul>
                             </li>
-                            <li>
-                                <a href="/">About</a>
-                            </li>
-                            <li>
+                            <li className="active">
                                 <a
                                     href="#pageSubmenu"
                                     data-toggle="collapse"
                                     aria-expanded="false"
-                                    className="dropdown-toggle">Pages</a>
+                                    className="dropdown-toggle">CONTACTS</a>
                                 <ul className="collapse list-unstyled" id="pageSubmenu">
-                                    <li>
-                                        <a href="/">Page 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Page 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="/">Page 3</a>
-                                    </li>
+                                <br></br>
+                                    Dr. Baula VakinStrap <br/>
+                                    142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
+                                    970-3092786 <br/>
+                                    Doctor <br/>
+
+                                    <br/>
+
+                                    Dr. Baula VakinStrap <br/>
+                                    142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
+                                    970-3092786 <br/>
+                                    Doctor <br/>
+                                    <br/>
+                                    
+                                    Dr. Baula VakinStrap <br/>
+                                    142 E. Havoc Street <br/>
+                                    PortLand Org <br/>
+                                    970-3092786 <br/>
+                                    Doctor <br/>
+                                    <br/>
+
                                 </ul>
                             </li>
+                          
                             <li>
                                 <a href="/">Portfolio</a>
                             </li>
@@ -83,8 +98,8 @@ class SideBar extends Component {
                 </div>
             </div>
         )
-    }
+    
 
 }
 
-export default SideBar;
+export default SideBarTest;

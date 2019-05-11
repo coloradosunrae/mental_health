@@ -3,7 +3,6 @@ import first from "./images/first.png"
 import form from "./images/form.png"
 import inperson from "./images/inperson.png"
 import phone from "./images/phone.png"
-import notes from "./notes.json"
 import TimeLineCard from "../TimeLineCard"
 import "./styleTime.scss";
 import Modal from "../Modal/app.js"
@@ -30,7 +29,7 @@ class TimeLine extends Component {
 
     }
 
-  
+
 
     render()
 

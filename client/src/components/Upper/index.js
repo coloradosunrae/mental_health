@@ -1,28 +1,8 @@
 import React from "react";
-import SideBar from "../SideBar"
-import TimeLine from "../TimeLine"
-import "./Layout.css"
-import Modal from "../Modal/app.js"
 import { Col, Card, CardBody, CardHeader, Progress, Row } from "reactstrap";
 
-
-const data = [44, 55, 13, 33];
-
-const options = {
-  dataLabels: {
-    enabled: false
-  }
-};
-
-function Layout() {
-  return (
-
-    <div>
-
-    <SideBar />
-
-    <div className="MainContent card">
-    <div className="w-100">
+const Statistics = () => (
+  <div className="w-100">
     <Row>
       <Col sm="6">
         <Card className="flex-fill">
@@ -130,13 +110,6 @@ function Layout() {
       </Col>
     </Row>
   </div>
-    
-    <TimeLine
-    />
-    </div>
+);
 
-    </div>
-  );
-}
-
-export default Layout;
+export default Statistics;

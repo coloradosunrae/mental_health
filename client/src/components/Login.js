@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import {Container} from "../components/GatherInfo/ContainerBox"
 // import './Login.css';
 
 import {
@@ -52,6 +53,7 @@ class Login extends Component {
   render() {
     const { username, password, message } = this.state;
     return (
+
       <React.Fragment>
        <div className="text-center mt-4">
       <h2>Welcome back</h2>
@@ -86,6 +88,7 @@ class Login extends Component {
       </CardBody>
       </Card>
       </React.Fragment>
+
     );
   }
 }

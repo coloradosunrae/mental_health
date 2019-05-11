@@ -5,16 +5,22 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import Layout from "../components/RecordPage/Layout";
 import SideBar from "../components/RecordPage/SideBar";
-import SideBarTest from "../components/RecordPage/SideBar/SideBar";
+import SideBarTest from "../components/RecordPage/SideBar";
 import ModalLayout from "../components/RecordPage/Modal/app";
 import TimeLine from "../components/RecordPage/TimeLine";
 import ClientInfo from "../components/RecordPage/ClientInfo";
 import axios from 'axios';
+import TimeLineCard from "../components/RecordPage/TimeLineCard";
+import first from "./images/first.png"
+import form from "./images/form.png"
+import inperson from "./images/inperson.png"
+import phone from "./images/phone.png"
 
 
 class DetailRecord extends Component{
   state = {
-    client: {}
+    client: {},
+    clinicianMessages: {},
   }
   // When this component mounts, grab the book with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
@@ -29,10 +35,76 @@ class DetailRecord extends Component{
       });
   }
 
-  //  renderPage = () => {
-  //    this.state.client.clinicianMessages.map(option => (
-      
-  //   ))} 
+  renderImage = (type) => {
+    if (type === "Evaluation") {
+        return <img src={inperson} className="imageTimeLine" alt="..."/>
+    }
+    if (type === "Online Form") {
+        return <img src={form} className="imageTimeLine" alt="..."/>
+    }
+    if (type === "First Contact") {
+        return <img src={first} className="imageTimeLine" alt="..."/>
+    }
+    if (type === "Telephone Call") {
+        return <img src={phone} className="imageTimeLine" alt="..."/>
+    } else {
+        return <img src={form} className="imageTimeLine" alt="..."/>
+    };
+
+}
+
+  renderPage = () => {
+
+    if (this.state.client.clinicianMessages){
+
+      return  (
+        <div>
+
+        <Container>
+        <div className="indContainer">
+        <h1 className="top">Medical Journal {"    "}</h1>
+        {this.state.client.clinicianMessages.map(cMessage => ( 
+         <div>
+         <div className="vl"></div>
+           <article className="timeline">
+                  <section className="timeline__section ">
+                  <article className="timeline">
+                  <nav className="timeline__nav ">
+                  <ul >
+                  <li>
+                  {this.renderImage(cMessage.type)}
+                  <span className="milestone">{cMessage.type}</span>
+                      </li>
+                      </ul>
+                    </nav>
+                    <div className="media-body wrapper">
+                            {cMessage.clincianMessage}
+                        </div>
+                    </article>
+                </section>
+            </article>
+          </div>
+   
+         ))}
+            </div>
+        {/* {this.state.client.clinicianMessages.map(cMessage => (
+   <tbody>
+    <tr>   
+      <td> {cMessage.type} </td>
+      <td> {cMessage.clincianMessage} </td>
+         
+       </tr>
+          </tbody>
+         ))} */}
+    </Container>
+    </div>
+  )
+      }
+
+    else {
+      return "Hello"
+    }
+  }
    
 
 
@@ -68,18 +140,17 @@ class DetailRecord extends Component{
     
     />
 
+{console.log(this.state.client.clinicianMessages)}
 
-
-     {/* {this.state.client.clinicianMessages.map(cMessage => (
-        <tbody key= {cMessage._id}>
-          <tr>
-            <td>{cMessage.lastName} </td>
-            <td> {cMessage.phoneNumber} </td>
-            <td> {cMessage.phoneNumber} </td>
-          </tr>
+  {/* {this.state.client.clinicianMessages.map(cMessage => (
+   <tbody>
+    <tr>
+          <td> {cMessage.clincianMessage} </td>
+          <td> {cMessage.type} </td>
+       </tr>
           </tbody>
-          ))} */}
-
+         ))} */}
+       {this.renderPage()}
 
     </div>
     </div>
