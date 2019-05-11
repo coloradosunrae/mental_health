@@ -2,17 +2,7 @@ import React from "react";
 import SideBar from "../SideBar"
 import TimeLine from "../TimeLine"
 import "./Layout.css"
-import Modal from "../Modal/app.js"
 import { Col, Card, CardBody, CardHeader, Progress, Row } from "reactstrap";
-
-
-const data = [44, 55, 13, 33];
-
-const options = {
-  dataLabels: {
-    enabled: false
-  }
-};
 
 function Layout() {
   return (

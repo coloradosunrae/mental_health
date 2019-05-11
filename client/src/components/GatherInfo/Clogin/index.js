@@ -100,7 +100,7 @@ function Clogin (props) {
       onChange={props.handleInputChange}
        type="textarea" 
        className="form-control mac"
-      name="input" />
+        />
       </FormGroup>
 
     <button className="btn btn-inside btn-boarder" onClick={props.handleFormSubmit} >Send</button>

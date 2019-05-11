@@ -1,10 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import "./SideBar.css"
-import ClientHeader from "../ClientHeader"
-import ClientInfo from "../ClientInfo"
+
 
 function SideBarTest(props) {
-    {console.log(props)}
         return (
             <div>
                 <div className="wrapperSideBar">

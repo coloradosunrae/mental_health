@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import Questions from "../Questions"
+// import Questions from "../Questions"
 import Login from '../Login'
-import ContinuePage from "../ContinuePage"
+// import ContinuePage from "../ContinuePage"
 import API from "../../../utils/API";
 import {Container} from "../ContainerBox"
 import NavTabs from "../../NavTabs"
-import SecondNavTabs from "../../SecondNavTabs"
-import video from "./images/Health.MP4"
 import Clogin from '../Clogin'
 
 
@@ -26,9 +24,7 @@ class Quiz extends Component {
     _id: "",
     intial: true,
     goToQuiz: true,
-    displayQuestions: false,
-    video:false,
-    random: 0,
+    displayQuestions: false
     
   }
   
@@ -72,7 +68,7 @@ class Quiz extends Component {
   handleStartQuiz = event => {
     this.setState({goToQuiz : false})
     this.setState({displayQuestions : true})
-    this.setState({video : true})
+
   }
 
   handleFormSubmit = event => {
@@ -87,7 +83,7 @@ class Quiz extends Component {
         hSuicidal: this.state.hSuicidal,
         birthdate: this.state.birthdate,
       })
-        .then(this.setInitial)
+        .then(this.handleStartQuiz)
         .catch(err => console.log(err));
     }
   };
@@ -146,16 +142,6 @@ class Quiz extends Component {
   </div>
         
       )
-      //   <div className="styleQuiz">
-      //    <Container>
-      //   <ContinuePage 
-      //         goToQuiz = {this.state.goToQuiz}
-      //         handleStartQuiz ={this.handleStartQuiz}
-     
-      //   />
-      //      </Container>
-      // </div>
-      // ); 
       }
 
 
@@ -165,16 +151,10 @@ class Quiz extends Component {
       
       <div>
         <Container>
-        <div className="alignVideo">
-        <video autoPlay muted playsinline className="alignVideo">
-        <source src={video} type="video/mp4" />
-      </video>
-    </div>
     <h1>Please Check All that Apply</h1>
    
-    
-      
-      <Questions />
+  
+ 
       </Container>
       </div>
 

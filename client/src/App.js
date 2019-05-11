@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import Quiz from "./components/GatherInfo/Quiz";
 import RecordPage from "./components/RecordPage/Layout";
-import DetailRecord from "./pages/DetailRecord";
+import DetailRecord from "./components/RecordPage/TimeLineCard";
 import Login from './components/Login';
 import Register from './components/Register';
 import Clients from "./pages/Clients";

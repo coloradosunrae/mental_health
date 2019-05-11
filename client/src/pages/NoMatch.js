@@ -1,8 +1,6 @@
 import React from "react";
-import { Col, Row, Container } from "../components/GatherInfo/Grid";
 import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
-import Jumbotron from "../components/Jumbotron";
 
 function NoMatch() {
   return (

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import {Container} from "../components/GatherInfo/ContainerBox"
+// import { Link } from 'react-router-dom';
+// import {Container} from "../components/GatherInfo/ContainerBox"
 // import './Login.css';
 
 import {
@@ -12,8 +11,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input,
-  CustomInput
+  Input
 } from "reactstrap";
 
 class Login extends Component {

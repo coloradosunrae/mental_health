@@ -3,9 +3,6 @@ import axios from 'axios';
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 
-
-
-
 import {
   Badge,
   Card,
@@ -42,10 +39,7 @@ class ClientsList extends Component {
   componentDidMount() {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
     API.getClients()
-    .then 
-    (res =>
-      this.setState({ clients: res.data, firstName: "", lastName: "", phoneNumber: "" })
-    )
+    .then (res => this.setState({ clients: res.data, firstName: "", lastName: "", phoneNumber: "" }))
     .catch((error) => {
       if(error.response.status === 401) {
         this.props.history.push("/login");
