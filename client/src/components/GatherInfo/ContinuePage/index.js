@@ -4,7 +4,10 @@ import "./ContinuePage.css"
 function ContinuePage(props) {
   return (
 
-  <h1> Thank you much! Somone will be in contact with you shortly.</h1>
+  <h1> Thank you much! Somone will be in contact with you shortly.
+
+    Remember 
+  </h1>
   );
 }
 
