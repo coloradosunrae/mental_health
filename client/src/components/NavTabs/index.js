@@ -11,16 +11,10 @@ function NavTabs() {
           Home
         </Link>
         <Link
-          to="/statistics"
-          className={window.location.pathname === "/statistics" ? "nav-link active" : "nav-link"}
+          to="/editorspage"
+          className={window.location.pathname === "/editorspage" ? "nav-link active" : "nav-link"}
         >
-          Statistics
-        </Link>
-        <Link
-          to="/contact/learn"
-          className="nav-item"
-        >
-          Learn
+          About
         </Link>
       </nav>
 

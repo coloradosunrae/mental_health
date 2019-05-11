@@ -7,6 +7,13 @@ import {Container} from "../ContainerBox"
 import NavTabs from "../../NavTabs"
 import Clogin from '../Clogin'
 
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle
+} from "reactstrap";
+
 
 class Quiz extends Component {
 
@@ -151,7 +158,22 @@ class Quiz extends Component {
       
       <div>
         <Container>
-    <h1>Please Check All that Apply</h1>
+        <Card>
+    <CardHeader>
+      <CardTitle tag="h5" className="mb-0">
+       This Webpage is just an Example and not Monitored. 
+      </CardTitle>
+    </CardHeader>
+    <CardBody>
+      <div id="introduction">
+        <p className="lead">
+        If you are in real pain or are having suicidal thoughts please reach out to the National Suicide Prevention Hotline.
+          1-800-273-8255
+        </p>
+        <p>Thanks you.</p>
+      </div>
+    </CardBody>
+  </Card>
    
   
  

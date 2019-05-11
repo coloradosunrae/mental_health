@@ -14,7 +14,9 @@ class ModalLayout extends Component {
   toggleModal = () => {
     this.setState({
       showModal: !this.state.showModal
-    });
+    }
+    );
+  
   }
 
 
@@ -36,7 +38,7 @@ class ModalLayout extends Component {
       API.updateClient(this.props.id, {
         clinicianMessages : [{clincianMessage : this.state.clinicianMessage, type: this.state.type}]
       })
-        //  .then(res => this.loadClients())
+         .then(this.toggleModal)
         .catch(err => console.log(err));
   };
   
@@ -55,8 +57,7 @@ class ModalLayout extends Component {
           onChange={this.handleInputChange}
         >
           <React.Fragment>
-            <h2>Told Ya!</h2>
-            <p>{this.props.firstName} </p> 
+            <p>{this.props.firstName} {this.props.lastName}</p> 
             <select 
               value={this.state.type} 
               name="type"

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container } from "../../GatherInfo/Grid";
 import API from "../../../utils/API";
 import SideBarTest from "../SideBar";
 import ModalLayout from "../Modal/app";
@@ -54,9 +53,21 @@ class DetailRecord extends Component{
       return  (
         <div>
 
-        <Container>
+ 
+
+
         <div className="indContainer">
-        <h1 className="top">Medical Journal {"    "}</h1>
+        <h1 className="top">Medical Journal --   {"    "}
+        <ModalLayout
+     firstName = {this.state.client.firstName} 
+     lastName = {this.state.client.lastName} 
+     clinicianMessages = {this.state.client.clinicianMessages}
+     id={this.state.client._id}
+     renderPage = {this.renderPage}
+    
+    />
+        
+        </h1>
         {this.state.client.clinicianMessages.map(cMessage => ( 
          <div>
          <div className="vl"></div>
@@ -90,7 +101,7 @@ class DetailRecord extends Component{
        </tr>
           </tbody>
          ))} */}
-    </Container>
+
     </div>
   )
       }
@@ -111,8 +122,15 @@ class DetailRecord extends Component{
  lastName = {this.state.client.lastName} 
  phoneNumber = {this.state.client.phoneNumber}
  messageInput = {this.state.client.messageInput}
+ birthdate = {this.state.client.birthdate}
+ race = {this.state.client.race}
+ hSuicidal = {this.state.client.hSuicidal}
 
- />
+ 
+ 
+
+ /> 
+
      {/* <ClientInfo
          firstName = {this.state.client.firstName} 
         
@@ -126,15 +144,8 @@ class DetailRecord extends Component{
 
 
     <div className="MainContent card">
-    <ModalLayout
-     firstName = {this.state.client.firstName} 
-     lastName = {this.state.client.lastName} 
-     clinicianMessages = {this.state.client.clinicianMessages}
-     id={this.state.client._id}
-    
-    />
 
-{console.log(this.state.client.clinicianMessages)}
+
 
   {/* {this.state.client.clinicianMessages.map(cMessage => (
    <tbody>

@@ -11,10 +11,11 @@ function SideBarTest(props) {
                         <div className="sidebar-header">
                         <div className="sidenav">
                             <h1>{props.firstName} {props.lastName}</h1>
-                            <p>{props.phoneNumber}</p>
-
-                            Address: 142 E. Havoc Street <br/>
-                                    PortLand Org <br/>
+                            <hr></hr>
+                            <p> P: {props.phoneNumber} <br/>
+                            Birthdate: {props.birthdate} <br/>
+                            Race: {props.race}</p>
+                        
                             </div>
                         </div>
 
@@ -24,31 +25,13 @@ function SideBarTest(props) {
                                     href="#homeSubmenu"
                                     data-toggle="collapse"
                                     aria-expanded="false"
-                                    className="dropdown-toggle">CONTACTS</a>
+                                    className="dropdown-toggle">HISTORY</a>
                                 <ul className="collapse list-unstyled" id="homeSubmenu">
                                 <br></br>
-                                    Dr. Baula VakinStrap <br/>
-                                    142 E. Havoc Street <br/>
-                                    PortLand Org <br/>
-                                    970-3092786 <br/>
-                                    Doctor <br/>
+                                  {props.hSuicidal}
 
                                     <br/>
-
-                                    Dr. Baula VakinStrap <br/>
-                                    142 E. Havoc Street <br/>
-                                    PortLand Org <br/>
-                                    970-3092786 <br/>
-                                    Doctor <br/>
                                     <br/>
-                                    
-                                    Dr. Baula VakinStrap <br/>
-                                    142 E. Havoc Street <br/>
-                                    PortLand Org <br/>
-                                    970-3092786 <br/>
-                                    Doctor <br/>
-                                    <br/>
-
                                 </ul>
                             </li>
                             <li className="active">
@@ -74,21 +57,8 @@ function SideBarTest(props) {
                                     Doctor <br/>
                                     <br/>
                                     
-                                    Dr. Baula VakinStrap <br/>
-                                    142 E. Havoc Street <br/>
-                                    PortLand Org <br/>
-                                    970-3092786 <br/>
-                                    Doctor <br/>
-                                    <br/>
 
                                 </ul>
-                            </li>
-                          
-                            <li>
-                                <a href="/">Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="/">Contact</a>
                             </li>
                         </ul>
 
